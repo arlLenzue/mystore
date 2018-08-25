@@ -23,7 +23,7 @@ require('./config/passport-facebook');
 
 var routes = require('./routes/index');
 
-mongoose.connect('mongodb://' + process.env.DB_USER + ':' + process.env.DB_PASS + '@' + process.env.DB_CONNECTION );
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/mystore');
 
 app.use(function (req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
