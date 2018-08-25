@@ -16,6 +16,7 @@ router.post('/register', function(req, res, next){
    user.setPassword(req.body.password);
 
    user.save(function(err){
+       console.log(err, "error register");
        if(err){ return next(err); }
 
        return res.json({
@@ -32,6 +33,7 @@ router.post('/login', function(req, res, next) {
     }
 
     passport.authenticate('local', function(err, user, info){
+        console.log(err, "error login")
         if(err){ return next(err); }
 
         if(user){

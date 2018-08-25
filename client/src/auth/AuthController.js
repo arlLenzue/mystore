@@ -19,6 +19,7 @@
         });
 
         function register(){
+            console.log('Register called')
             AuthService.register(vm.user).error(function(error){
                vm.error = error;
             }).then(function(){
